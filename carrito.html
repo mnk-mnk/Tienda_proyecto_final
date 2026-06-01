@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    NovaShop
+  </title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="css/carrito.css">
+
+</head>
+
+<body>
+
+  <!-- ========================================
+  NAVBAR
+  ========================================= -->
+
+
+  <nav>
+
+    <div class="nav-container">
+
+      <!-- LOGO -->
+
+      <a href="https://bobydevx.github.io/tienda-online" class="logo">
+
+        Mini<span>Shop</span>
+
+      </a>
+
+
+      <!-- BOTONES NAV -->
+
+      <div class="nav-actions">
+
+        <!-- TODO:
+        Abrir modal login
+        -->
+
+        <button id="account-btn" class="nav-btn" hidden>
+
+          Mi cuenta
+
+        </button>
+
+        <button id="login-btn" class="nav-btn">
+          👤
+        </button>
+
+        <button id="logout-btn" class="nav-btn">
+          Cerrar Sesión
+        </button>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <div class="container">
+    <main class="main-layout">
+
+      <!-- CHECKOUT -->
+
+      <section class="checkout">
+
+        <h2>
+          Datos de envío
+        </h2>
+
+        <form id="checkoutForm">
+
+          <div class="form-grid">
+
+            <div class="input-group">
+
+              <label for="nameInput">
+                Nombre
+              </label>
+
+              <input type="text" id="nameInput" required>
+
+            </div>
+
+            <div class="input-group">
+
+              <label for="  ">
+                Apellidos
+              </label>
+
+              <input type="text" id="lastnameInput" required>
+
+            </div>
+
+            <div class="input-group full">
+
+              <label for="addressInput">
+                Dirección
+              </label>
+
+              <input type="text" id="addressInput" required>
+
+            </div>
+
+            <div class="input-group">
+
+              <label for="cityInput">
+                Ciudad
+              </label>
+
+              <input type="text" id="cityInput" required>
+
+            </div>
+
+            <div class="input-group">
+
+              <label for="postalInput">
+                Código postal
+              </label>
+
+              <input type="number" minlength="6" id="postalInput" required>
+
+            </div>
+
+            <div class="input-group">
+
+              <label for="phoneInput">
+                Teléfono
+              </label>
+
+              <input type="text" id="phoneInput" required>
+
+            </div>
+
+            <div class="input-group">
+
+              <label for="emailInput">
+                Email
+              </label>
+
+              <input type="email" id="emailInput" required>
+
+            </div>
+
+          </div>
+
+          <button type="submit" class="buy-btn" id="buyBtn">
+            Comprar ahora
+          </button>
+
+        </form>
+
+        <div class="success-message hidden" id="successMessage">
+          Compra realizada correctamente
+        </div>
+
+      </section>
+      <!-- CARRITO -->
+
+      <aside class="cart-panel">
+
+        <h2>
+          Carrito
+        </h2>
+
+        <div id="cartContainer">
+
+        </div>
+
+        <div class="cart-total">
+
+          <span>Total</span>
+
+          <span id="cartTotal">
+            0€
+          </span>
+
+        </div>
+
+        <!-- <button class="checkout-btn" id="checkoutBtn">
+          Finalizar compra
+        </button> -->
+
+      </aside>
+
+    </main>
+
+
+    <!-- ========================================
+  MODAL LOGIN
+  ========================================= -->
+
+    <div class="login-modal hidden" id="loginModal">
+
+      <div class="login-box">
+
+        <!-- BOTÓN CERRAR -->
+
+        <button class="close-login" id="closeLogin">
+
+          ✕
+
+        </button>
+
+
+        <!-- TÍTULO -->
+
+        <h2>
+
+          Iniciar sesión
+
+        </h2>
+
+
+        <p>
+
+          Accede a tu cuenta
+
+        </p>
+
+
+        <!-- FORM LOGIN -->
+
+        <form id="loginForm">
+
+          <input type="text" id="username" placeholder="Usuario" required>
+
+          <input type="password" id="password" placeholder="Contraseña" required>
+
+          <button type="submit">
+
+            Entrar
+
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <script src="js/login.js"></script>
+  <script src="js/carrito.js"></script>
+
+</body>
+
+</html>

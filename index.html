@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mini Ecommerce</title>
+
+  <!-- GOOGLE FONTS -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+  <!-- ========================================
+  NAVBAR
+  ========================================= -->
+
+  <nav>
+
+    <div class="nav-container">
+
+      <!-- LOGO -->
+
+      <a href="https://bobydevx.github.io/tienda-online" class="logo">
+
+        Mini<span>Shop</span>
+
+      </a>
+
+
+      <!-- BOTONES NAV -->
+
+      <div class="nav-actions">
+
+        <!-- TODO:
+        Abrir modal login
+        -->
+
+        <button id="account-btn" class="nav-btn" hidden>
+
+          Mi cuenta
+
+        </button>
+
+        <button id="login-btn" class="nav-btn">
+          👤
+        </button>
+
+        <button id="logout-btn" class="nav-btn">
+          Cerrar Sesión
+        </button>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+
+  <!-- ========================================
+  HERO
+  ========================================= -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+
+        Descubre tu nuevo estilo
+
+      </h1>
+
+      <p>
+
+        Ecommerce realizado con JavaScript,
+        Fetch API y GitHub.
+
+      </p>
+
+      <button>
+
+        Comprar ahora
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ========================================
+  FILTROS
+  ========================================= -->
+
+  <section class="controls">
+
+    <div class="controls-box">
+
+      <!-- TODO:
+      Buscador productos
+      -->
+
+      <input type="text" id="searchInput" placeholder="Buscar productos...">
+
+
+      <!-- TODO:
+      Filtro categorías
+      -->
+
+      <select id="categoryFilter">
+
+        <option value="all">
+
+          Todas las categorías
+
+        </option>
+
+      </select>
+
+
+      <!-- TODO:
+      Ordenaciones
+      -->
+
+      <select id="sortSelect">
+
+        <option value="default">
+
+          Ordenar por
+
+        </option>
+
+        <option value="priceAsc">
+
+          Precio ↑
+
+        </option>
+
+        <option value="priceDesc">
+
+          Precio ↓
+
+        </option>
+
+        <option value="az">
+
+          A-Z
+
+        </option>
+
+        <option value="za">
+
+          Z-A
+
+        </option>
+
+      </select>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ========================================
+  MAIN
+  ========================================= -->
+
+  <main class="main-layout">
+
+
+
+    <!-- ========================================
+    PRODUCTOS
+    ========================================= -->
+
+    <section class="products-grid" id="productsContainer">
+    </section>
+
+
+
+    <!-- ========================================
+    CARRITO
+    ========================================= -->
+
+    <aside class="cart-panel">
+
+      <h2>
+
+        Carrito
+
+      </h2>
+
+
+      <!-- TODO:
+      Pintar carrito dinámicamente
+      -->
+
+      <div id="cartContainer">
+
+        <!-- EJEMPLO ITEM -->
+
+
+      </div>
+
+
+      <!-- TOTAL -->
+
+      <div class="cart-total">
+
+        <span>
+
+          Total
+
+        </span>
+
+        <span id="cartTotal">
+
+          0
+
+        </span>
+
+      </div>
+
+
+      <!-- TODO:
+      Vaciar carrito / checkout
+      -->
+
+      <button id="checkoutBtn" class="checkout-btn">
+
+        Finalizar compra
+
+      </button>
+
+    </aside>
+
+  </main>
+
+
+
+  <!-- ========================================
+  MODAL LOGIN
+  ========================================= -->
+
+  <div class="login-modal hidden" id="loginModal">
+
+    <div class="login-box">
+
+      <!-- BOTÓN CERRAR -->
+
+      <button class="close-login" id="closeLogin">
+
+        ✕
+
+      </button>
+
+
+      <!-- TÍTULO -->
+
+      <h2>
+
+        Iniciar sesión
+
+      </h2>
+
+
+      <p>
+
+        Accede a tu cuenta
+
+      </p>
+
+
+      <!-- FORM LOGIN -->
+
+      <form id="loginForm">
+
+        <input type="text" id="username" placeholder="Usuario" required>
+
+        <input type="password" id="password" placeholder="Contraseña" required>
+
+        <button type="submit">
+
+          Entrar
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ========================================
+  FOOTER
+  ========================================= -->
+
+  <footer>
+
+    <p>
+
+      Proyecto Mini Ecommerce · JavaScript + Git
+
+    </p>
+
+  </footer>
+
+
+
+  <!-- JAVASCRIPT -->
+
+  <script src="js/login.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
