@@ -230,6 +230,20 @@ function renderProducts(productsArray) {
     favBtn.addEventListener('click', () => toggleFavorite(producto.id));
 
 
+    // =====================================================================
+    // Redirección al hacer clic en la foto o textos
+    // =====================================================================
+    productImageContainer.style.cursor = "pointer";
+    productImageContainer.addEventListener("click", () => {
+      window.location.href = "detalle.html?id=" + producto.id;
+    });
+    productTitle.style.cursor = "pointer";
+    productTitle.addEventListener("click", () => {
+      window.location.href = "detalle.html?id=" + producto.id;
+    });
+
+
+    
     productImageContainer.append(productImage);
     productCard.append(productImageContainer);
 
@@ -436,7 +450,7 @@ EXTRA
 
 // SE ENCUENTRA EN LOGIN.JS
 
-function finalizarCompra(e){
+function finalizarCompra(e) {
   e.preventDefault();
 
   window.location.replace("/carrito.html")
