@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - MiniShop</title>
+    <link rel="stylesheet" href="css/panelAdmin.css">
+</head>
+<body>
+
+    <div class="admin-container">
+        
+        <!-- CABECERA -->
+        <div class="admin-header">
+            <h1>Panel Admin</h1>
+            <button class="btn-nuevo">Nuevo producto</button>
+        </div>
+
+        <!-- TARJETAS DE DATOS SUPERIORES -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <strong>20</strong>
+                <span>Productos</span>
+            </div>
+            <div class="stat-card">
+                <strong>125</strong>
+                <span>Pedidos</span>
+            </div>
+            <div class="stat-card">
+                <strong>54</strong>
+                <span>Usuarios</span>
+            </div>
+            <div class="stat-card">
+                <strong>12.450€</strong>
+                <span>Ventas</span>
+            </div>
+        </div>
+
+        <!-- TABLA DE PRODUCTOS -->
+        <div class="table-container">
+            <table class="products-table">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Categoría</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="adminProductsBody">
+                    <!-- Los productos de la API se meterán aquí con JS -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="js/panelAdmin.js"></script>
+</body>
+</html>
