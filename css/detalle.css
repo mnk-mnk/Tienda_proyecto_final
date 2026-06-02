@@ -89,21 +89,40 @@
  .actions {
      display: flex;
      gap: 15px;
+     max-width: 450px;
  }
 
  button {
      border: none;
      padding: 18px;
-     border-radius: 18px;
+     border-radius: 14px;
      cursor: pointer;
+     font-weight: bold;
+     transition: background 0.2s ease;
  }
 
  .buy-btn {
      flex: 1;
+     background: #0f172a;
+     color: white;
+ }
+
+ .buy-btn:hover {
+     background: #1e293b;
  }
 
  .fav-btn {
      width: 70px;
+     background: #ffe4e6;
+     /* Fondo rosa muy suave de la imagen */
+     font-size: 1.2rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .fav-btn:hover {
+     background: #fecdd3;
  }
 
  /* =========================
@@ -113,15 +132,30 @@
  .info-grid {
      display: grid;
      grid-template-columns: repeat(2, 1fr);
-     gap: 20px;
+     gap: 16px;
      margin-bottom: 40px;
+     max-width: 450px;
  }
 
  .info-card {
-     padding: 20px;
-     border-radius: 20px;
+     padding: 12px 18px;
+     border-radius: 12px; 
      background: #f9fafb;
+     border: 1px solid #f3f4f6; 
+     font-size: 0.95rem;
+     color: #0f172a;
+     font-weight: 600;
+    }
+
+    /* Estiliza la primera palabra (Marca, Stock...) */
+ .info-card::first-line {
+     font-size: 0.75rem;
+     color: #9ca3af;
+     font-weight: 400;
  }
+    
+
+ 
 
  /* =========================
            RELACIONADOS

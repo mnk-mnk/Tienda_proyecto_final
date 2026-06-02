@@ -76,12 +76,20 @@ function renderProduct(producto) {
     // Mapea exactamente como Home / Categoría / Product
     breadcrumbElement.textContent = "Home / " + producto.category + " / Product";
 
-// corregir y que en todos vaya lo mismo
+    // En todos los articulos va lo mismo porque no hay esos datos en la API
     // 2. SOLUCIÓN CARACTERÍSTICAS: Usamos los datos directos de la respuesta de la API
-   // brandElement.textContent = "Marca " + producto.??category; // La categoría actúa como marca
-   // stockElement.textContent = "Stock " + producto.id + " unidades"; // El ID actúa como stock
-    //shippingElement.textContent = "Envío 24h Gratis"; // Siempre fijo "24h Gratis" como indicaste
-   // skuElement.textContent = "SKU " + producto.id; // El ID genera el código SKU directamente
+    
+     // 1. Marca: Primera palabra del title
+
+    brandElement.style.whiteSpace = "pre-line"; // Permite procesar los saltos de línea
+    stockElement.style.whiteSpace = "pre-line";
+    shippingElement.style.whiteSpace = "pre-line";
+    skuElement.style.whiteSpace = "pre-line";
+
+    brandElement.textContent = "Marca\n " + "NovaWear";
+    stockElement.textContent = "Stock\n " + producto.id + " unidades"; // El ID actúa como stock
+    shippingElement.textContent = "Envío\n 24h Gratis";
+    skuElement.textContent = "SKU\n " + "NS-2026"
 
 
     // 3. SOLUCIÓN COMPROBACIÓN FAVORITOS: Revisar ANTES de pintar el corazón
