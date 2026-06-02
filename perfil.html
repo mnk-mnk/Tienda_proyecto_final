@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - Tienda</title>
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- BARRA LATERAL -->
+        <div class="sidebar">
+            <div class="avatar-box">
+                <div class="avatar-circle" id="avatarInitial">M</div>
+                <h3 id="sidebarUsername">mor_2314 </h3>
+                <p id="sidebarEmail">mor_2314@gmail.com</p>
+            </div>
+
+            <div class="sidebar-nav">
+                <a href="#section-editar" class="nav-btn-link active">Mi perfil</a>
+                <a href="#section-pedidos" class="nav-btn-link">Pedidos</a>
+                <a href="#section-favoritos" class="nav-btn-link">Favoritos</a>
+                <button id="logoutBtn" class="logout-button">Cerrar sesión</button>
+            </div>
+        </div>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="profile-content">
+
+            <!-- CAJA 1: EDITAR PERFIL -->
+            <div id="section-editar" class="profile-section">
+                <h2>Editar perfil</h2>
+                <form id="profileForm" class="form-inputs">
+                    <div class="form-control">
+                        <label>Nombre</label>
+                        <input type="text" id="profileFirstname">
+                    </div>
+                    <div class="form-control">
+                        <label>Apellido</label>
+                        <input type="text" id="profileLastname">
+                    </div>
+                    <div class="form-control">
+                        <label>Usuario</label>
+                        <input type="text" id="profileUser">
+                    </div>
+                    <div class="form-control">
+                        <label>Email</label>
+                        <input type="email" id="profileEmail">
+                    </div>
+                    <div class="form-control">
+                        <label>Teléfono</label>
+                        <input type="text" id="profilePhone">
+                    </div>
+                    <div class="form-control">
+                        <label>Ciudad</label>
+                        <input type="text" id="profileCity">
+                    </div>
+                    <button type="button" class="btn-guardar">Guardar cambios</button>
+                </form>
+            </div>
+
+            <!-- CAJA 2: FAVORITOS -->
+            <div id="section-favoritos" class="profile-section">
+                <h2>Favoritos</h2>
+                <div class="favorites-grid" id="profileFavoritesGrid">
+                    <!-- Los productos se meten con JS -->
+                </div>
+                <button class="btn-cargar">Cargar más</button>
+            </div>
+
+            <!-- CAJA 3: MIS PEDIDOS -->
+            <div id="section-pedidos" class="profile-section">
+                <h2>Mis pedidos</h2>
+                <div id="ordersContainer">
+                    <!-- Aquí irá la lista de pedidos -->
+                    <!-- PEDIDO #1 -->
+                    <div class="pedido-bloque">
+                        <div class="pedido-cabecera">
+                            <div>
+                                <h3>Pedido #1</h3>
+                                <span class="pedido-fecha">2026-03-02</span>
+                            </div>
+                            <span class="estado-entregado">Entregado</span>
+                        </div>
+                        <div class="pedido-productos">
+                            <div class="pedido-fila">
+                                <span>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</span>
+                                <strong>x4</strong>
+                            </div>
+                            <div class="pedido-fila">
+                                <span>Mens Casual Premium Slim Fit T-Shirts</span>
+                                <strong>x1</strong>
+                            </div>
+                            <div class="pedido-fila">
+                                <span>Mens Cotton Jacket</span>
+                                <strong>x6</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PEDIDO #2 -->
+                    <div class="pedido-bloque">
+                        <div class="pedido-cabecera">
+                            <div>
+                                <h3>Pedido #2</h3>
+                                <span class="pedido-fecha">2026-01-02</span>
+                            </div>
+                            <span class="estado-entregado">Entregado</span>
+                        </div>
+                        <div class="pedido-productos">
+                            <div class="pedido-fila">
+                                <span>Mens Casual Premium Slim Fit T-Shirts</span>
+                                <strong>x4</strong>
+                            </div>
+                            <div class="pedido-fila">
+                                <span>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</span>
+                                <strong>x10</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/perfil.js"></script>
+</body>
+
+</html>

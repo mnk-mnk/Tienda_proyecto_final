@@ -221,3 +221,15 @@ loginForm.addEventListener(
 // =========================
 
 checkSession();
+
+// ========================================
+// ENLAZAR CON LA PÁGINA DE PERFIL (FASE 2)
+// ========================================
+var botonMiCuenta = document.getElementById("account-btn");
+
+if (botonMiCuenta) {
+    botonMiCuenta.addEventListener("click", function () {
+        
+        window.location.href = "perfil.html";
+    });
+}

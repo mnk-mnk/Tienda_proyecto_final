@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #111827;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    display: flex;
+    /* Flexbox básico para las dos columnas */
+    gap: 30px;
+}
+
+/* BARRA LATERAL */
+.sidebar {
+    width: 250px;
+    background: white;
+    border-radius: 20px;
+    padding: 30px 15px;
+    text-align: center;
+    height: fit-content;
+}
+
+.avatar-circle {
+    width: 80px;
+    height: 80px;
+    background-color: #6366f1;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    border-radius: 50%;
+    line-height: 80px;
+    /* Centrado clásico */
+    margin: 0 auto 15px auto;
+}
+
+.avatar-box h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.avatar-box p {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 25px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-btn-link {
+    background: none;
+    border: none;
+    padding: 12px;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: #4b5563;
+}
+
+.nav-btn-link.active,
+.nav-btn-link:hover {
+    background-color: #f3f4f6;
+    color: black;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    color: #ef4444;
+    padding: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* BLOQUES DE LA DERECHA */
+.profile-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* Pone las cajas una debajo de otra */
+}
+
+.profile-section {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.profile-section h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* FORMULARIO EN DOS COLUMNAS */
+.form-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-control {
+    width: calc(50% - 10px);
+    /* Mitad de pantalla menos el hueco */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-control label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-control input {
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background-color: #f9fafb;
+    font-size: 15px;
+}
+
+.btn-guardar,
+.btn-cargar {
+    width: 100%;
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* CUADRÍCULA DE FAVORITOS (MÁXIMO 4 EN LÍNEA) */
+.favorites-grid {
+    display: flex;
+    flex-wrap: wrap;       /* Saltan abajo si no caben */
+    gap: 20px;             /* Separación normal entre cajas */
+    margin-bottom: 25px;
+}
+
+.fav-card {
+    width: 220px;          /* Ancho fijo básico para cada tarjeta */
+    border: 1px solid #f3f4f6;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+    height: 250px; 
+}
+
+.fav-card:hover {
+    border-color: #6366f1;
+    /* El borde se vuelve morado suave al pasar el ratón */
+}
+
+.fav-card img {
+    height: 110px;
+    max-width: 100%;
+    object-fit: contain;
+    /* Evita que las fotos de la API se deformen */
+    margin: 0 auto 12px auto;
+    display: block;
+}
+
+.fav-card h3 {
+    font-size: 13px;
+    color: #1f2937;
+    height: 40px;          /* Altura fija para el texto */
+    overflow: hidden;      /* Si el texto es muy largo, se oculta de forma limpia */
+    margin-bottom: 10px;
+}
+
+.fav-card p {
+    font-weight: bold;
+    font-size: 15px;
+    color: #111827;
+    margin-top: auto;
+}
+
+.btn-cargar {
+    width: auto;
+    padding: 12px 25px;
+}
+
+/* Enlaces y los pedidos */
+
+html {
+    scroll-behavior: smooth;
+    /* Salto del ancla fluido */
+}
+
+.nav-btn-link {
+    display: block;
+    text-decoration: none;
+    background: none;
+    border: none;
+    padding: 12px;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: #4b5563;
+    font-weight: bold;
+}
+
+.nav-btn-link.active,
+.nav-btn-link:hover {
+    background-color: #f3f4f6;
+    color: black;
+}
+
+/* ESTILOS DEL HISTORIAL DE PEDIDOS */
+.pedido-bloque {
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+    background-color: #f9fafb;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.pedido-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed #e5e7eb;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.pedido-cabecera h3 {
+    font-size: 16px;
+    color: #111827;
+}
+
+.pedido-fecha {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.estado-entregado {
+    color: #10b981;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #ecfdf5;
+    padding: 4px 10px;
+    border-radius: 8px;
+}
+
+.pedido-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pedido-fila {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #374151;
+}
+
+.pedido-fila span {
+    max-width: 85%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Puntos suspensivos si el nombre es largo */
+}
