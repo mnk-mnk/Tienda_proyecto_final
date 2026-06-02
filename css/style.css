@@ -458,7 +458,7 @@ BOTONES CARD
 
   background:var(--primary);
 
-  color:white;
+  color:rgb(255, 255, 255);
 
   padding:14px;
 
@@ -505,7 +505,7 @@ BOTONES CARD
 
 .fav-btn:hover{
 
-  background:#fee2e2;
+  background:#fee2e6;
 
 }
 
