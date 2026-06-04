@@ -124,7 +124,7 @@ function renderCart() {
     return;
   }
 
-  // TODO
+
   cart.map((item) => {
     const producto = item.producto;
     // calculo del subtotal y suma carrito
@@ -183,7 +183,6 @@ function renderCart() {
   // Creamos la sección final del carrito para el botón "Vaciar Carrito"
   const cartActionsContainer = document.createElement("div");
   cartActionsContainer.classList.add("cart-menu-actions");
-
 
 
   const clearCartBtn = document.createElement("button");
@@ -256,7 +255,7 @@ JSON.parse()
 */
 
 function loadCart() {
-  // TODO
+
   const carritoGuardado = localStorage.getItem("carrito");
 
   if (carritoGuardado) {
@@ -275,14 +274,13 @@ function checkout(e) {
 
   window.location.href = "carrito.html";
 
-
 }
 
 function validateCheckout(e) {
   e.preventDefault();
 
   // No comprar si no tienes articulo
-  if (cart.length < 1){
+  if (cart.length < 1) {
     alert("Añade un producto para continuar con la compra");
     return;
   }
@@ -305,6 +303,40 @@ function generateCartItem() {
 
 }
 
+// ========================================================
+// AUTORELLENAR DATOS DE ENVÍO CON LA SESIÓN DE MORTICIA (NUEVO)
+// ========================================================
+function autorellenarDatosEnvioMorticia() {
+  // Comprobamos si el cliente inició sesión leyendo el token
+  const tokenCliente = sessionStorage.getItem("token");
+  const esAdmin = sessionStorage.getItem("isAdmin");
+
+  // Si no está logueado o si es el usuario "admin", dejamos el formulario limpio
+  if (!tokenCliente || esAdmin === "true") return;
+
+  // Si es un cliente activo, inyectamos los datos de Morticia en los inputs
+  if (document.getElementById("nameInput")) {
+    document.getElementById("nameInput").value = "Morticia";
+  }
+  if (document.getElementById("lastnameInput")) {
+    document.getElementById("lastnameInput").value = "Addams";
+  }
+  if (document.getElementById("addressInput")) {
+    document.getElementById("addressInput").value = "Cementerio de Westfield, Calle del Horror 13";
+  }
+  if (document.getElementById("cityInput")) {
+    document.getElementById("cityInput").value = "Westfield, Nueva York";
+  }
+  if (document.getElementById("postalInput")) {
+    document.getElementById("postalInput").value = "10001";
+  }
+  if (document.getElementById("phoneInput")) {
+    document.getElementById("phoneInput").value = "666 666 666";
+  }
+  if (document.getElementById("emailInput")) {
+    document.getElementById("emailInput").value = "mor_2314@gmail.com";
+  }
+}
 
 
 // =========================
@@ -330,3 +362,6 @@ checkoutForm?.addEventListener(
 loadCart();
 
 renderCart();
+
+// Ejecutamos el autorelleno tras cargar el carrito
+autorellenarDatosEnvioMorticia();
