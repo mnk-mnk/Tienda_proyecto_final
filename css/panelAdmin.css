@@ -53,7 +53,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 .stat-card strong {
@@ -71,12 +71,13 @@ body {
     background: white;
     border-radius: 20px;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 .products-table {
     width: 100%;
-    border-collapse: collapse; /* Quita los bordes dobles de las tablas */
+    border-collapse: collapse;
+    /* Quita los bordes dobles de las tablas */
     text-align: left;
 }
 
@@ -128,13 +129,54 @@ body {
 
 .celda-acciones {
     display: flex;
-    gap: 10px;              /* Espacio de separación de 10px entre los botones */
-    align-items: center;    /* Los centra verticalmente en la celda */
+    gap: 10px;
+    /* Espacio de separación de 10px entre los botones */
+    align-items: center;
+    /* Los centra verticalmente en la celda */
 }
 
 /* Forzamos un ancho fijo a los botones para que se vean simétricos */
-.btn-editar, .btn-eliminar {
+.btn-editar,
+.btn-eliminar {
     width: 75px;
     text-align: center;
     font-weight: bold;
+}
+
+/* Estilos botón de panelAdmin*/
+#admin-btn {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Contenedor para alinear el enlace de regreso y el botón nuevo */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Espacio entre el enlace y el botón */
+}
+
+/* Estilo para el enlace de regreso */
+.nav-btn-back {
+    text-decoration: none;
+    color: #333;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Efecto visual al pasar el ratón */
+.nav-btn-back:hover {
+    background-color: #f5f5f5;
+    border-color: #999;
 }
