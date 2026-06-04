@@ -2,38 +2,39 @@
 RESET
 ======================================== */
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 a {
   text-decoration: none;
 }
+
 /* ========================================
 VARIABLES
 ======================================== */
 
-:root{
+:root {
 
-  --bg:#f1f5f9;
+  --bg: #f1f5f9;
 
-  --white:#ffffff;
+  --white: #ffffff;
 
-  --text:#0f172a;
+  --text: #0f172a;
 
-  --muted:#64748b;
+  --muted: #64748b;
 
-  --primary:#6366f1;
+  --primary: #6366f1;
 
-  --primary-hover:#4f46e5;
+  --primary-hover: #4f46e5;
 
-  --success:#10b981;
+  --success: #10b981;
 
-  --danger:#ef4444;
+  --danger: #ef4444;
 
-  --border:#e2e8f0;
+  --border: #e2e8f0;
 
 }
 
@@ -42,13 +43,13 @@ VARIABLES
 BODY
 ======================================== */
 
-body{
+body {
 
-  font-family:'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
 
-  background:var(--bg);
+  background: var(--bg);
 
-  color:var(--text);
+  color: var(--text);
 
 }
 
@@ -57,93 +58,94 @@ body{
 NAVBAR
 ======================================== */
 
-nav{
+nav {
 
-  position:sticky;
+  position: sticky;
 
-  top:0;
+  top: 0;
 
-  z-index:100;
+  z-index: 100;
 
-  background:#0f172a;
+  background: #0f172a;
 
-  padding:20px 0;
-
-}
-
-
-.nav-container{
-
-  width:90%;
-
-  max-width:1400px;
-
-  margin:auto;
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-
-  flex-wrap: nowrap;       /* Fuerza a que el botón se quede siempre a la derecha */
-  gap: 20px;     
+  padding: 20px 0;
 
 }
 
 
-.logo{
+.nav-container {
 
-  font-size:28px;
+  width: 90%;
 
-  font-weight:700;
+  max-width: 1400px;
 
-  color:white;
+  margin: auto;
 
-}
+  display: flex;
 
+  justify-content: space-between;
 
-.logo span{
-
-  color:var(--primary);
-
-}
+  align-items: center;
 
 
-.nav-actions{
-
-  display:flex;
-
-  gap:15px;
+  flex-wrap: nowrap;
+  /* Fuerza a que el botón se quede siempre a la derecha */
+  gap: 20px;
 
 }
 
 
-.nav-btn{
+.logo {
 
-  border:none;
+  font-size: 28px;
 
-  background:var(--primary);
+  font-weight: 700;
 
-  color:white;
-
-  padding:12px 20px;
-
-  border-radius:14px;
-
-  cursor:pointer;
-
-  font-weight:600;
-
-  transition:0.3s;
+  color: white;
 
 }
 
 
-.nav-btn:hover{
+.logo span {
 
-  background:var(--primary-hover);
+  color: var(--primary);
+
+}
+
+
+.nav-actions {
+
+  display: flex;
+
+  gap: 15px;
+
+}
+
+
+.nav-btn {
+
+  border: none;
+
+  background: var(--primary);
+
+  color: white;
+
+  padding: 12px 20px;
+
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+
+}
+
+
+.nav-btn:hover {
+
+  background: var(--primary-hover);
 
 }
 
@@ -152,88 +154,86 @@ nav{
 HERO
 ======================================== */
 
-.hero{
+.hero {
 
-  height:420px;
+  height: 420px;
 
   background:
-  linear-gradient(
-    rgba(15,23,42,0.7),
-    rgba(15,23,42,0.7)
-  ),
+    linear-gradient(rgba(15, 23, 42, 0.7),
+      rgba(15, 23, 42, 0.7)),
 
-  url("https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1400&auto=format&fit=crop");
+    url("https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1400&auto=format&fit=crop");
 
-  background-size:cover;
+  background-size: cover;
 
-  background-position:center;
+  background-position: center;
 
-  display:flex;
+  display: flex;
 
-  justify-content:center;
+  justify-content: center;
 
-  align-items:center;
+  align-items: center;
 
-  text-align:center;
+  text-align: center;
 
-  color:white;
+  color: white;
 
-  padding:20px;
+  padding: 20px;
 
 }
 
 
-.hero-content{
+.hero-content {
 
-  max-width:700px;
-
-}
-
-
-.hero h1{
-
-  font-size:64px;
-
-  margin-bottom:20px;
+  max-width: 700px;
 
 }
 
 
-.hero p{
+.hero h1 {
 
-  font-size:18px;
+  font-size: 64px;
 
-  line-height:1.6;
-
-  margin-bottom:30px;
+  margin-bottom: 20px;
 
 }
 
 
-.hero button{
+.hero p {
 
-  border:none;
+  font-size: 18px;
 
-  background:var(--primary);
+  line-height: 1.6;
 
-  color:white;
-
-  padding:16px 30px;
-
-  border-radius:14px;
-
-  cursor:pointer;
-
-  font-weight:600;
-
-  transition:0.3s;
+  margin-bottom: 30px;
 
 }
 
 
-.hero button:hover{
+.hero button {
 
-  background:var(--primary-hover);
+  border: none;
+
+  background: var(--primary);
+
+  color: white;
+
+  padding: 16px 30px;
+
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+
+}
+
+
+.hero button:hover {
+
+  background: var(--primary-hover);
 
 }
 
@@ -242,58 +242,58 @@ HERO
 FILTROS
 ======================================== */
 
-.controls{
+.controls {
 
-  width:90%;
+  width: 90%;
 
-  max-width:1400px;
+  max-width: 1400px;
 
-  margin:auto;
+  margin: auto;
 
-  margin-top:-40px;
+  margin-top: -40px;
 
-  position:relative;
+  position: relative;
 
-  z-index:20;
+  z-index: 20;
 
 }
 
 
-.controls-box{
+.controls-box {
 
-  background:white;
+  background: white;
 
-  border-radius:24px;
+  border-radius: 24px;
 
-  padding:25px;
+  padding: 25px;
 
-  display:flex;
+  display: flex;
 
-  gap:15px;
+  gap: 15px;
 
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 
-  box-shadow:0 15px 35px rgba(0,0,0,0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
 
 }
 
 
 .controls input,
-.controls select{
+.controls select {
 
-  flex:1;
+  flex: 1;
 
-  min-width:220px;
+  min-width: 220px;
 
-  padding:15px;
+  padding: 15px;
 
-  border-radius:14px;
+  border-radius: 14px;
 
-  border:1px solid var(--border);
+  border: 1px solid var(--border);
 
-  background:#f8fafc;
+  background: #f8fafc;
 
-  outline:none;
+  outline: none;
 
 }
 
@@ -302,19 +302,19 @@ FILTROS
 MAIN LAYOUT
 ======================================== */
 
-.main-layout{
+.main-layout {
 
-  width:90%;
+  width: 90%;
 
-  max-width:1400px;
+  max-width: 1400px;
 
-  margin:50px auto;
+  margin: 50px auto;
 
-  display:grid;
+  display: grid;
 
-  grid-template-columns:1fr 350px;
+  grid-template-columns: 1fr 350px;
 
-  gap:30px;
+  gap: 30px;
 
 }
 
@@ -323,14 +323,14 @@ MAIN LAYOUT
 PRODUCTOS
 ======================================== */
 
-.products-grid{
+.products-grid {
 
-  display:grid;
+  display: grid;
 
   grid-template-columns:
-  repeat(auto-fit, minmax(260px,1fr));
+    repeat(auto-fit, minmax(260px, 1fr));
 
-  gap:25px;
+  gap: 25px;
 
 }
 
@@ -339,109 +339,109 @@ PRODUCTOS
 CARD PRODUCTO
 ======================================== */
 
-.product-card{
+.product-card {
 
-  background:white;
+  background: white;
 
-  border-radius:24px;
+  border-radius: 24px;
 
-  overflow:hidden;
+  overflow: hidden;
 
-  transition:0.3s;
+  transition: 0.3s;
 
-  box-shadow:0 8px 20px rgba(0,0,0,0.05);
-
-}
-
-
-.product-card:hover{
-
-  transform:translateY(-8px);
-
-  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 
 }
 
 
-.product-image{
+.product-card:hover {
 
-  height:260px;
+  transform: translateY(-8px);
 
-  background:white;
-
-  display:flex;
-
-  justify-content:center;
-
-  align-items:center;
-
-  padding:30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 
 }
 
 
-.product-image img{
+.product-image {
 
-  max-width:100%;
+  height: 260px;
 
-  max-height:100%;
+  background: white;
 
-  object-fit:contain;
+  display: flex;
 
-}
+  justify-content: center;
 
+  align-items: center;
 
-.product-info{
-
-  padding:22px;
-
-}
-
-
-.product-category{
-
-  font-size:12px;
-
-  text-transform:uppercase;
-
-  color:var(--primary);
-
-  margin-bottom:10px;
-
-  font-weight:700;
+  padding: 30px;
 
 }
 
 
-.product-title{
+.product-image img {
 
-  font-size:18px;
+  max-width: 100%;
 
-  margin-bottom:15px;
+  max-height: 100%;
 
-  line-height:1.4;
-
-  min-height:50px;
+  object-fit: contain;
 
 }
 
 
-.product-price{
+.product-info {
 
-  font-size:28px;
-
-  font-weight:700;
-
-  margin-bottom:20px;
+  padding: 22px;
 
 }
 
 
-.card-actions{
+.product-category {
 
-  display:flex;
+  font-size: 12px;
 
-  gap:10px;
+  text-transform: uppercase;
+
+  color: var(--primary);
+
+  margin-bottom: 10px;
+
+  font-weight: 700;
+
+}
+
+
+.product-title {
+
+  font-size: 18px;
+
+  margin-bottom: 15px;
+
+  line-height: 1.4;
+
+  min-height: 50px;
+
+}
+
+
+.product-price {
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  margin-bottom: 20px;
+
+}
+
+
+.card-actions {
+
+  display: flex;
+
+  gap: 10px;
 
 }
 
@@ -450,51 +450,51 @@ CARD PRODUCTO
 BOTONES CARD
 ======================================== */
 
-.add-btn{
+.add-btn {
 
-  flex:1;
+  flex: 1;
 
-  border:none;
+  border: none;
 
-  background:var(--primary);
+  background: var(--primary);
 
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 
-  padding:14px;
+  padding: 14px;
 
-  border-radius:14px;
+  border-radius: 14px;
 
-  cursor:pointer;
+  cursor: pointer;
 
-  font-weight:600;
+  font-weight: 600;
 
-  transition:0.3s;
-
-}
-
-
-.add-btn:hover{
-
-  background:var(--primary-hover);
+  transition: 0.3s;
 
 }
 
 
-.fav-btn{
+.add-btn:hover {
 
-  width:52px;
+  background: var(--primary-hover);
 
-  border:none;
+}
 
-  border-radius:14px;
 
-  background:#f8fafc;
+.fav-btn {
 
-  cursor:pointer;
+  width: 52px;
 
-  font-size:18px;
+  border: none;
 
-  transition:0.3s;
+  border-radius: 14px;
+
+  background: #f8fafc;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  transition: 0.3s;
 }
 
 .fav-btn.haveFavorite {
@@ -503,9 +503,9 @@ BOTONES CARD
 }
 
 
-.fav-btn:hover{
+.fav-btn:hover {
 
-  background:#fee2e6;
+  background: #fee2e6;
 
 }
 
@@ -514,97 +514,97 @@ BOTONES CARD
 CARRITO
 ======================================== */
 
-.cart-panel{
+.cart-panel {
 
-  background:white;
+  background: white;
 
-  border-radius:24px;
+  border-radius: 24px;
 
-  padding:25px;
+  padding: 25px;
 
-  height:fit-content;
+  height: fit-content;
 
-  position:sticky;
+  position: sticky;
 
-  top:100px;
+  top: 100px;
 
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
-
-}
-
-
-.cart-panel h2{
-
-  margin-bottom:25px;
-
-  font-size:28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 
 }
 
 
-.cart-item{
+.cart-panel h2 {
 
-  display:flex;
+  margin-bottom: 25px;
 
-  justify-content:space-between;
-
-  align-items:center;
-
-  padding:15px 0;
-
-  border-bottom:1px solid var(--border);
+  font-size: 28px;
 
 }
 
 
-.cart-item-info{
+.cart-item {
 
-  flex:1;
+  display: flex;
 
-}
+  justify-content: space-between;
 
+  align-items: center;
 
-.cart-item-title{
+  padding: 15px 0;
 
-  font-size:14px;
-
-  font-weight:600;
-
-  margin-bottom:5px;
+  border-bottom: 1px solid var(--border);
 
 }
 
 
-.cart-item-price{
+.cart-item-info {
 
-  color:var(--muted);
-
-  font-size:14px;
+  flex: 1;
 
 }
 
 
-.remove-btn{
+.cart-item-title {
 
-  width:36px;
+  font-size: 14px;
 
-  height:36px;
+  font-weight: 600;
 
-  border:none;
-
-  border-radius:10px;
-
-  background:#fee2e2;
-
-  color:var(--danger);
-
-  cursor:pointer;
-
-  font-weight:bold;
+  margin-bottom: 5px;
 
 }
 
-#clear-cart-btn{
+
+.cart-item-price {
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+}
+
+
+.remove-btn {
+
+  width: 36px;
+
+  height: 36px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #fee2e2;
+
+  color: var(--danger);
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+}
+
+#clear-cart-btn {
   padding: 16px 24px;
   border: none;
   border-radius: 10px;
@@ -622,21 +622,21 @@ CARRITO
 
 
 
-.cart-total{
+.cart-total {
 
-  margin-top:25px;
+  margin-top: 25px;
 
-  padding-top:20px;
+  padding-top: 20px;
 
-  border-top:2px solid var(--border);
+  border-top: 2px solid var(--border);
 
-  display:flex;
+  display: flex;
 
-  justify-content:space-between;
+  justify-content: space-between;
 
-  font-size:22px;
+  font-size: 22px;
 
-  font-weight:700;
+  font-weight: 700;
 
 }
 
@@ -645,27 +645,27 @@ CARRITO
 CHECKOUT BUTTON
 ======================================== */
 
-.checkout-btn{
+.checkout-btn {
 
-  width:100%;
+  width: 100%;
 
-  margin-top:20px;
+  margin-top: 20px;
 
-  border:none;
+  border: none;
 
-  background:var(--success);
+  background: var(--success);
 
-  color:white;
+  color: white;
 
-  padding:16px;
+  padding: 16px;
 
-  border-radius:16px;
+  border-radius: 16px;
 
-  cursor:pointer;
+  cursor: pointer;
 
-  font-size:16px;
+  font-size: 16px;
 
-  font-weight:600;
+  font-weight: 600;
 
 }
 
@@ -674,131 +674,131 @@ CHECKOUT BUTTON
 LOGIN MODAL
 ======================================== */
 
-.login-modal{
+.login-modal {
 
-  position:fixed;
+  position: fixed;
 
-  inset:0;
+  inset: 0;
 
-  background:rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
 
-  display:flex;
+  display: flex;
 
-  justify-content:center;
+  justify-content: center;
 
-  align-items:center;
+  align-items: center;
 
-  z-index:999;
-
-}
-
-
-.login-modal.hidden{
-
-  display:none;
+  z-index: 999;
 
 }
 
 
-.login-box{
+.login-modal.hidden {
 
-  width:100%;
-
-  max-width:420px;
-
-  background:white;
-
-  padding:40px;
-
-  border-radius:28px;
-
-  position:relative;
+  display: none;
 
 }
 
 
-.login-box h2{
+.login-box {
 
-  font-size:34px;
+  width: 100%;
 
-  margin-bottom:10px;
+  max-width: 420px;
 
-}
+  background: white;
 
+  padding: 40px;
 
-.login-box p{
+  border-radius: 28px;
 
-  color:var(--muted);
-
-  margin-bottom:25px;
-
-}
-
-
-.login-box form{
-
-  display:flex;
-
-  flex-direction:column;
-
-  gap:15px;
+  position: relative;
 
 }
 
 
-.login-box input{
+.login-box h2 {
 
-  padding:16px;
+  font-size: 34px;
 
-  border-radius:14px;
-
-  border:1px solid var(--border);
-
-  background:#f8fafc;
-
-  outline:none;
+  margin-bottom: 10px;
 
 }
 
 
-.login-box button[type="submit"]{
+.login-box p {
 
-  border:none;
+  color: var(--muted);
 
-  background:var(--primary);
-
-  color:white;
-
-  padding:16px;
-
-  border-radius:14px;
-
-  cursor:pointer;
-
-  font-weight:600;
+  margin-bottom: 25px;
 
 }
 
 
-.close-login{
+.login-box form {
 
-  position:absolute;
+  display: flex;
 
-  top:15px;
+  flex-direction: column;
 
-  right:15px;
+  gap: 15px;
 
-  width:38px;
+}
 
-  height:38px;
 
-  border:none;
+.login-box input {
 
-  border-radius:10px;
+  padding: 16px;
 
-  background:#f1f5f9;
+  border-radius: 14px;
 
-  cursor:pointer;
+  border: 1px solid var(--border);
+
+  background: #f8fafc;
+
+  outline: none;
+
+}
+
+
+.login-box button[type="submit"] {
+
+  border: none;
+
+  background: var(--primary);
+
+  color: white;
+
+  padding: 16px;
+
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+}
+
+
+.close-login {
+
+  position: absolute;
+
+  top: 15px;
+
+  right: 15px;
+
+  width: 38px;
+
+  height: 38px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #f1f5f9;
+
+  cursor: pointer;
 
 }
 
@@ -807,17 +807,17 @@ LOGIN MODAL
 FOOTER
 ======================================== */
 
-footer{
+footer {
 
-  margin-top:50px;
+  margin-top: 50px;
 
-  background:#0f172a;
+  background: #0f172a;
 
-  color:white;
+  color: white;
 
-  text-align:center;
+  text-align: center;
 
-  padding:25px;
+  padding: 25px;
 
 }
 
@@ -826,25 +826,57 @@ footer{
 RESPONSIVE
 ======================================== */
 
-@media(max-width:1100px){
+@media(max-width:1100px) {
 
-  .main-layout{
+  .main-layout {
 
-    grid-template-columns:1fr;
+    grid-template-columns: 1fr;
+    padding-right: 360px;
+  }
 
+  /* CARRITO ESTÁTICO Y FIJO EN LA PARTE SUPERIOR DERECHA */
+  .cart-panel {
+    position: fixed;
+    top: 90px;
+    /* Ajusta este valor si tu navbar mide más o menos */
+    right: 20px;
+    width: 320px;
+    /* Ancho controlado para que no se deforme */
+    max-height: calc(100vh - 130px);
+    /* Evita que el carrito se salga por abajo de la pantalla */
+    overflow-y: auto;
+    /* Si hay muchos artículos, permite hacer scroll solo dentro del carrito */
+    background-color: #fff;
+    box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.1);
+    /* Sombra suave para separarlo del fondo */
+    z-index: 99;
+    /* Lo mantiene por encima de las tarjetas de los productos */
+    border-radius: 8px;
   }
 
 }
 
 
-@media(max-width:768px){
+@media(max-width:768px) {
 
-  .hero h1{
+  .hero h1 {
 
-    font-size:42px;
-
+    font-size: 42px;
   }
 
+  /* En pantallas muy pequeñas (móviles), adaptamos el layout para aprovechar el espacio */
+  .main-layout {
+    padding-right: 0;
+    /* Quitamos el margen lateral */
+  }
+
+  .cart-panel {
+    position: static;
+    /* Volvemos al flujo normal en móviles para que no tape la pantalla completa */
+    width: 100%;
+    max-height: none;
+    margin-top: 30px;
+  }
 }
 
 /* Contenedor de los botones + y - */
