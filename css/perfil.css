@@ -285,3 +285,24 @@ html {
     text-overflow: ellipsis;
     /* Puntos suspensivos si el nombre es largo */
 }
+
+/* Estilo específico para el botón de regresar a la tienda */
+.sidebar-nav .btn-back-shop {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    color: #4f46e5; /* Color morado a juego con tu botón principal */
+    font-weight: 600;
+    margin-bottom: 12px; /* Separación con respecto a 'Mi perfil' */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+/* Efecto hover para el botón de regreso */
+.sidebar-nav .btn-back-shop:hover {
+    background-color: #f4f4ff;
+    border-color: #4f46e5;
+    color: #4f46e5;
+}

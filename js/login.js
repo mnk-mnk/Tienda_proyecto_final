@@ -14,9 +14,19 @@ const closeLogin =
 const loginForm =
   document.getElementById("loginForm");
 
-  
+
 // Botón Mi cuenta
 const accountBtn = document.getElementById("account-btn");
+
+
+// Botón Panel Admin
+//const adminBtn = document.getElementById("admin-btn");
+
+// Credenciales únicas del Administrador
+const adminUser = "admin";
+const adminPass = "ADMIN";
+
+
 /*
 OBJETIVO:
 Mantener sesión iniciada.
@@ -26,25 +36,53 @@ TAREAS:
 - Mostrar login si no existe
 */
 
-
+/*
 function checkSession() {
   // TODO
   const isLogin = sessionStorage.getItem('token');
+  const isAdmin = sessionStorage.getItem('isAdmin');
+
+  const adminBtnActivo = document.getElementById("admin-btn");
 
   if (isLogin) {
     // Ocultar boton de login
     loginBtn.setAttribute("hidden", true);
     logoutBtn.removeAttribute("hidden");
-    // mostrar boton mi cuenta
-    accountBtn.removeAttribute("hidden");
+
+    if (isAdmin === "true") {
+      if (adminBtnActivo) adminBtnActivo.removeAttribute("hidden"); // Muestra engranaje al admin
+      accountBtn.setAttribute("hidden", true);         // Oculta "Mi cuenta" al admin
+    } else {
+      if (adminBtnActivo) adminBtnActivo.setAttribute("hidden", true); // Oculta engranaje al cliente
+      accountBtn.removeAttribute("hidden");               // Muestra "Mi cuenta" al cliente
+    }
   } else {
     // Mostrar login si no existe
     loginBtn.removeAttribute("hidden");
     logoutBtn.setAttribute("hidden", true);
     // ocultar boton mi cuenta
     accountBtn.setAttribute("hidden", true);
+    if (adminBtnActivo) adminBtnActivo.setAttribute("hidden", true);
   }
 }
+*/
+
+function checkSession() {
+  const isLogin = sessionStorage.getItem('token');
+
+  if (isLogin) {
+    // Ocultar botón de login y mostrar cerrar sesión
+    loginBtn.setAttribute("hidden", true);
+    logoutBtn.removeAttribute("hidden");
+    accountBtn.removeAttribute("hidden"); // Muestra siempre "Mi cuenta" si hay sesión
+  } else {
+    // Si no hay sesión, mostramos login y ocultamos el resto
+    loginBtn.removeAttribute("hidden");
+    logoutBtn.setAttribute("hidden", true);
+    accountBtn.setAttribute("hidden", true);
+  }
+}
+
 
 
 /*
@@ -61,8 +99,8 @@ logoutBtn.addEventListener("click", logout);
 
 
 function logout() {
-  // TODO
   sessionStorage.removeItem('token');
+  sessionStorage.removeItem('isAdmin');
   cerrarModal();
   checkSession();
 }
@@ -111,7 +149,6 @@ loginModal.addEventListener(
   "click",
   (e) => {
 
-    // TODO
     if (e.target === loginModal) {
       cerrarModal();
     }
@@ -177,8 +214,25 @@ loginForm.addEventListener(
     e.preventDefault();
 
     // Capturar formulario
-    const usernameValue = document.getElementById("username").value;
+    const usernameValue = document.getElementById("username").value.trim();
     const passwordValue = document.getElementById("password").value;
+
+    // 1. COMPROBACIÓN RESTRITA: ¿Es el Administrador con tus variables?
+    if (usernameValue === adminUser && passwordValue === adminPass) {
+      sessionStorage.setItem("token", "admin-token-simulado-12345");
+      sessionStorage.setItem("isAdmin", "true"); // Registramos que es admin
+
+      if (loginModal) {
+        loginModal.classList.add("hidden");
+      }
+
+      alert("¡Acceso concedido! Entrando al panel de administración.");
+      checkSession();
+
+      // Redirección inmediata al panel de control
+      window.location.href = "panelAdmin.html";
+      return; // Detiene el código aquí para que no ejecute el fetch de la API
+    }
 
     // 2. enviar datos
     fetch("https://fakestoreapi.com/auth/login", {
@@ -199,6 +253,7 @@ loginForm.addEventListener(
         // 3. Guardar token
         if (data.token) {
           sessionStorage.setItem("token", data.token);
+          sessionStorage.setItem("isAdmin", "false"); // No es administrador, es cliente
 
           // 4 Cerrar modal
           if (loginModal) {
@@ -228,8 +283,28 @@ checkSession();
 var botonMiCuenta = document.getElementById("account-btn");
 
 if (botonMiCuenta) {
-    botonMiCuenta.addEventListener("click", function () {
-        
-        window.location.href = "perfil.html";
-    });
+  botonMiCuenta.addEventListener("click", function () {
+    window.location.href = "perfil.html";
+  });
+}
+
+
+// ========================================
+// CONTROL DE ACCESO AL PANEL DESDE TUERCA 
+// ========================================
+var botonTuercaAdmin = document.getElementById("admin-btn");
+
+if (botonTuercaAdmin) {
+  botonTuercaAdmin.addEventListener("click", function() {
+    var adminLogueado = sessionStorage.getItem('isAdmin');
+
+    if (adminLogueado === "true") {
+      // Si la sesión de admin ya existe en la memoria, viaja directo al panel
+      window.location.href = "panelAdmin.html";
+    } else {
+      // Si no, exige la autenticación abriendo el modal en la pantalla actual
+      alert("Por favor, inicia sesión con tus credenciales de Administrador.");
+      abrirModal();
+    }
+  });
 }
